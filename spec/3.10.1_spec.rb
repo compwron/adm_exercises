@@ -9,15 +9,23 @@ describe UnmatchedFinder do
     end
 
     it 'one matched set' do
-       expect(subject.ok?('()')).to eq true
+      expect(subject.ok?('()')).to eq true
     end
 
     it 'not ok with one unmatched right' do
-       expect(subject.ok?('(')).to eq false
+      expect(subject.ok?('(')).to eq false
     end
 
     it 'not ok with one unmatched left' do
-       expect(subject.ok?(')')).to eq false
+      expect(subject.ok?(')')).to eq false
+    end
+
+    it 'ok with nested' do
+      expect(subject.ok?('(()())()')).to eq true
+    end
+
+    it 'not ok with broken nested' do
+      expect(subject.ok?(')(')).to eq false
     end
   end
 end
