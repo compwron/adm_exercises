@@ -1,5 +1,5 @@
 class UnmatchedFinder
-  def ok?(_input)
-  	true
+  def ok?(input)
+	input.gsub("(", '').size == input.gsub(")", '').size
   end
 end
