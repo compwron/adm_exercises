@@ -1,17 +1,12 @@
 class UnmatchedFinder
   # http://commandercoriander.net/blog/2013/04/18/how-to-validate-matching-parentheses/
+  MAPPING = { '(' => 1, ')' => -1 }
 
   def ok?(input)
     tally = { parens: 0 }
 
     input.each_char do |c|
-      case c
-       when '('
-         tally[:parens] += 1
-       when ')'
-         tally[:parens] -= 1
-       end
-
+      tally[:parens] += MAPPING[c]
       return false if tally[:parens] < 0
     end
 
