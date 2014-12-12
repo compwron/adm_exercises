@@ -6,7 +6,7 @@ class UnmatchedFinder
     tally = { parens: 0, squarebrackets: 0 }
 
     input.each_char do |c|
-      tally[:parens] += ( MAPPING[c] ? MAPPING[c] : -1 )
+      tally[:parens] += (MAPPING[c] ? MAPPING[c] : -1)
       return false if tally[:parens] < 0
     end
 

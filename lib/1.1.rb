@@ -1,0 +1,2 @@
+class Grinch
+end
