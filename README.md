@@ -1,0 +1,1 @@
+http://blog.panictank.net/category/algorithmndesignmanualsolutions/
